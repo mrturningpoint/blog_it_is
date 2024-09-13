@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% for post in posts %}
+        <h1>{{ post.name }}</h1>
+        <p>have the job role of {{ post.job }} having salary of {{ post.sallary }}</p>
+    {% endfor %}
+{% endblock content %}
+

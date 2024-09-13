@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+           <title>title-{{title}}</title>
+    {% else %}
+           <title>title</title>
+    {% endif %}              
+</head>
+<body>
+    <h1>hi</h1>
+    {% for post in posts %}
+    <h1>{{post.name}}</h1>
+    <p>have the jobe role of {{post.job}} having sallary of {{post.salary}}</p>
+    {% endfor %}
+</body>
+</html>
