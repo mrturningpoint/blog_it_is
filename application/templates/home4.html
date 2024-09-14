@@ -3,12 +3,17 @@
     {% for post in posts %}
     <article class="media content-section">
         <div class="media-body">
+          <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
           <div class="article-metadata">
-            <a class="mr-2" href="#">{{ post.name }}</a>
-            <small class="text-muted">{{ post.job }}</small>
+            <a class="mr-2" href="#">{{ post.author.username }}</a>
+            <small class="text-muted">{{ post.date.strftime('%Y-%m-%d') }}</small>
+          </div>
+          <div class="article-metadata">
+            <a class="mr-2" href="{{url_for('post',post_id=post.id)}}">{{ post.title }}</a>
+           
           </div>
           
-          <p class="article-content">{{ post.salary }}</p>
+          <p class="article-content">{{ post.content }}</p>
         </div>
       </article>
     {% endfor %}
